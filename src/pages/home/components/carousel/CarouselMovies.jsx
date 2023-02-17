@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "antd";
+import { fetchCarouselApi } from "services/carousel";
 
 const contentStyle = {
   width: "100%",
@@ -8,28 +9,38 @@ const contentStyle = {
 };
 
 export default function CarouselMovies() {
+  const [carouselList, setCarouselList] = useState([]);
+  useEffect(() => {
+    getCarousel();
+  }, []);
+
+  const getCarousel = async () => {
+    const result = await fetchCarouselApi();
+    // console.log(result)
+    setCarouselList(result.data.content);
+  };
+
+  const renderCarousel = () => {
+    return carouselList.map((ele) => {
+      return (
+        <div key={ele.maBanner}>
+          <div>
+            <img style={contentStyle} src={ele.hinhAnh} />
+          </div>
+        </div>
+      );
+    });
+  };
+
   const onChange = (currentSlide) => {
-    console.log(currentSlide);
+    // console.log(currentSlide);
   };
   return (
     <Carousel afterChange={onChange} dotPosition="right" autoplay={true}>
-      <div>
-        <div>
-          <img
-            style={contentStyle}
-            src="https://i.ytimg.com/vi/FoZbdtQMTvM/maxresdefault.jpg"
-          />
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <img
-            style={contentStyle}
-            src="https://media.doisongphapluat.com/thumb_x1280x857/media/dang-nhat-duy/2022/12/03/poster-phim-tran-thanh-nha-ba-nu-dspl-31220222.jpg"
-          />
-        </div>
-      </div>
+      {renderCarousel()}
     </Carousel>
   );
 }
+
+
+

@@ -1,8 +1,7 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
-import { fetchMovieListApi } from "../../../../services/movie";
+
 import { Button } from "antd";
 import { useMovieList } from "../../../../hooks/useMovieList";
 
