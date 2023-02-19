@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { setUserInfoAction } from "../../store/actions/userAction";
+import "./header.scss"
 
 export default function Header() {
   const userState = useSelector((state) => state.userReducer);
@@ -16,10 +17,7 @@ export default function Header() {
 
   return (
     <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        {" "}
-        Movie{" "}
-      </a>
+    
       <button
         className="navbar-toggler d-lg-none"
         type="button"
@@ -32,7 +30,7 @@ export default function Header() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="collapsibleNavId">
-        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul className="navbar-brand">
           <li className="nav-item active">
             {/* <a className="nav-link" href="#">
               {" "}
@@ -41,6 +39,20 @@ export default function Header() {
             <NavLink to="/">Home</NavLink>
           </li>
         </ul>
+
+        <a className="navbar-brand" href="#">
+        {" "}
+        Movie{" "}
+      </a>
+      <a className="navbar-brand" href="#">
+      {" "}
+        Member{" "}
+        </a>
+        <a className="navbar-brand" href="#">
+      {" "}
+        Contact{" "}
+      </a>
+      
         <div className="ml-auto">
           {userState.userInfo ? (
             <>

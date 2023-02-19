@@ -1,13 +1,15 @@
 import React from "react";
 import "./footer.scss"
 export default function Footer() {
+
+  
   return (
     <div className="footer">
   <div className="footer-bg-layer">
   <div className="container">
     <div className="row footer-top">
       <div className="col-lg-6 col-md-5 footer-list mt-5">
-        <h6 className="footer-title">Thông tin liên hệ</h6>
+              <h6 className="footer-title">Thông tin liên hệ </h6>
         <ul>
           <li>
             <p>
@@ -126,6 +128,10 @@ export default function Footer() {
 
   );
 }
+
+
+
+
 
 
 
