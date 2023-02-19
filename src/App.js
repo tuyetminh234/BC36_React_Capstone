@@ -4,6 +4,7 @@ import Router from "./routes/Router";
 import { LoadingProvider } from "./contexts/loading/LoadingContext";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <LoadingProvider>
@@ -14,3 +15,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
