@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "antd";
 import { fetchCarouselApi } from "services/carousel";
+import "./carouselMovie.scss"
+
 
 const contentStyle = {
   width: "100%",
@@ -23,9 +25,9 @@ export default function CarouselMovies() {
   const renderCarousel = () => {
     return carouselList.map((ele) => {
       return (
-        <div key={ele.maBanner}>
+        <div key={ele.maBanner} className="banner">
           <div>
-            <img style={contentStyle} src={ele.hinhAnh} />
+            <img style={contentStyle} src={ele.hinhAnh} className="banner-img"/>
           </div>
         </div>
       );
