@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { fetchMovieShowtimesApi } from "../../../../services/cinema";
 import moment from "moment";
 import { formatDate } from "../../../../utils";
-
+import "./showTimes.scss"
 export default function Showtimes() {
   const [movieShowtimes, setMovieShowtimes] = useState({});
   const params = useParams();
@@ -27,13 +27,17 @@ export default function Showtimes() {
       return (
         <a
           key={ele.maHeThongRap}
-          className={`nav-link text-capitalize ${idx === 0 && "active"}`}
+          className={`system nav-link text-capitalize ${idx === 0 && "active"}`}
           data-toggle="pill"
           href={`#${ele.maHeThongRap}`}
           role="tab"
           aria-selected="true"
         >
-          {ele.tenHeThongRap}
+          <div>
+            <img className="logo" src={ele.logo} />
+            {ele.tenHeThongRap}
+          </div>
+         
         </a>
       );
     });
@@ -51,18 +55,18 @@ export default function Showtimes() {
           {ele?.cumRapChieu?.map((ele) => {
             return (
               <div key={ele.maCumRap} className="row mb-5">
-                <div className="col-1">
+                <div className="col-2">
                   <img className="img-fluid rounded" src={ele.hinhAnh} />
                 </div>
-                <div className="col-11 pl-0">
+                <div className="col-10 pl-0">
                   <h5>{ele.tenCumRap}</h5>
                   <span className="text-muted">{ele.diaChi}</span>
                 </div>
-                <div className="col-12">
+                <div className="col-12 show-dateTime">
                   <div className="row">
                     {ele?.lichChieuPhim?.map((ele) => {
                       return (
-                        <div className="col-3" key={ele.maLichChieu}>
+                        <div className="show-times col-3" key={ele.maLichChieu}>
                           <Link to={`/booking/${ele.maLichChieu}`}>
                             {formatDate(ele.ngayChieuGioChieu)}
                           </Link>
@@ -80,11 +84,12 @@ export default function Showtimes() {
   };
 
   return (
-    <div className="col-12 mt-5">
-      <div className="row">
-        <div className="col-3">
+    <div className=" col-12 mt-5">
+      <h3>Lịch chiếu</h3>
+      <div className="show-system row">
+        <div className="col-4">
           <div
-            className="nav flex-column nav-pills"
+            className=" system-content nav flex-column nav-pills"
             id="v-pills-tab"
             role="tablist"
             aria-orientation="vertical"
@@ -92,8 +97,9 @@ export default function Showtimes() {
             {renderTabs()}
           </div>
         </div>
-        <div className="col-9">
+        <div className="col-8">
           <div className="tab-content" id="v-pills-tabContent">
+            
             {renderTabContents()}
           </div>
         </div>
