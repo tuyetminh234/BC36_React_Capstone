@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { fetchTheaterSystemApi } from "services/theater";
 import { formatDate } from "utils";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./theaterSystem.scss";
 
 export default function TheaterSystem() {
   const [theaterSystem, setTheaterSystem] = useState([]);
   const [idTheater, setIdTheater] = useState("CGV");
   const [idMovie, setIdMovie] = useState("cgv-aeon-tan-phu");
+  const params = useParams()
   useEffect(() => {
     getTheaterSystem();
   }, []);
@@ -105,7 +106,7 @@ export default function TheaterSystem() {
                                   <a
                                     key={ele.maLichChieu}
                                     className="showTime-detail-a"
-                                    href="#"
+                                    href={`/booking/${ele.maLichChieu}`}
                                   >
                                     <div className="times">
                                       <p>

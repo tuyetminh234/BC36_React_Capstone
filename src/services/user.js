@@ -9,3 +9,13 @@ export const loginApi = (information) => {
     data: information,
   });
 };
+
+
+export const bookingHistoryApi = (information) => {
+  return axiosRequest({
+    url: `/QuanLyNguoiDung/ThongTinTaiKhoan`,
+    method: "POST",
+    data: information,
+  });
+};
+
