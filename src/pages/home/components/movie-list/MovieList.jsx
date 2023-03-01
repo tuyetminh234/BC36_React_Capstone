@@ -13,11 +13,39 @@ export default function MovieList() {
   const movieList = useMovieList();
 
   const settings = {
-     dots: true,
-     infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
+    dots: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+    initialSlide: 0,
+      rows: 2,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   const renderMovieList = () => {
@@ -36,7 +64,7 @@ export default function MovieList() {
             />
             <div className="card-body">
               <h5 className="card-title">{ele.tenPhim}</h5>
-              <Button
+              <Button className="show-detail"
                 onClick={() => navigate(`/movie-detail/${ele.maPhim}`)}
                 size="large"
                 type="primary"
@@ -51,7 +79,7 @@ export default function MovieList() {
   };
 
   return (
-    <div className="row mt-3 mx-auto w-75">
+    <div className=" movie-list row mt-3 mx-auto w-75">
       <Slider {...settings}>
       {renderMovieList()}
       </Slider>

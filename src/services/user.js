@@ -11,11 +11,11 @@ export const loginApi = (information) => {
 };
 
 
-export const bookingHistoryApi = (information) => {
+export const bookingHistoryApi = (user) => {
   return axiosRequest({
-    url: `/QuanLyNguoiDung/ThongTinTaiKhoan`,
+    url: `/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${user}`,
     method: "POST",
-    data: information,
+   
   });
 };
 

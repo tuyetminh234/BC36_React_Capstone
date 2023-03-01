@@ -10,17 +10,19 @@ a {
 }
 
 .navbar-brand a {
-    font-size: 34px;
+    display: flex;
+    font-size: 20px;
     color:#189a46;
     font-weight: 700;
     text-decoration: none;
 }
 .navbar-brand a:hover {
-    color:#189a46;
+    color:#10612d;
+    text-decoration: none;
     
 }
 
 .navbar-brand {
-    padding-left: 70px;
+    padding-left: 50px;
    
 }

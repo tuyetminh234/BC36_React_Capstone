@@ -30,15 +30,14 @@ export default function Header() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="collapsibleNavId">
-        <ul className="navbar-brand">
-          <li className="nav-item active">
+        
             {/* <a className="nav-link" href="#">
               {" "}
               Home{" "}
             </a> */}
-            <NavLink to="/">Home</NavLink>
-          </li>
-        </ul>
+            <a className="navbar-brand"><NavLink to="/">Home</NavLink></a>
+            
+        
 
         <a className="navbar-brand" href="#">
         {" "}

@@ -54,8 +54,8 @@ export default function Router() {
           element: <Register/>
         },
         {
-          path: "/account",
-          element: <Account/>
+          path: "/account/:user",
+          element: <Account/>,
         }
       ],
     },
