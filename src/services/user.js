@@ -13,9 +13,17 @@ export const loginApi = (information) => {
 
 export const bookingHistoryApi = (user) => {
   return axiosRequest({
-    url: `/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${user}`,
+    url: `/QuanLyNguoiDung/ThongTinTaiKhoan?taiKhoan=${user}`,
     method: "POST",
    
   });
 };
+
+export const getProfileApi = (taiKhoan) => {
+  return axiosRequest({
+    url: `/QuanLyNguoiDung/ThongTinTaiKhoan?taiKhoan=${taiKhoan}`,
+    method: "POST",
+  });
+};
+
 

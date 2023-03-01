@@ -1,6 +1,30 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { profileApi } from 'services/user'
 
-export default function AccountInfo() {
+export default function AccountInfo(props) {
+  const [form, setForm] = useState()
+ 
+ 
+  useEffect(() => {
+    if (props.data) {
+      setForm(props.data)
+    }
+  }, [props.data])
+
+  // const getProfileApi = async () => {
+  //   try {
+  //     const result = await getProfileApi()
+  //   console.log(result)
+    
+  //   } catch (error) {
+  //     console.log("error", error)
+  //   }
+    
+// }
+
   return (
     <div className="account-info">
     <h1>Cài đặt tài khoản chung</h1>
@@ -19,6 +43,7 @@ export default function AccountInfo() {
                   name="taiKhoan"
                   type="text"
                   className="form-control"
+                  value={form?.taiKhoan}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -34,6 +59,7 @@ export default function AccountInfo() {
                   maxLength={10}
                   type="text"
                   className="form-control"
+                  value={form?.matKhau}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -47,6 +73,7 @@ export default function AccountInfo() {
                   name="hoTen"
                   type="text"
                   className="form-control"
+                  value={form?.hoTen}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -61,6 +88,7 @@ export default function AccountInfo() {
                   type="text"
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   className="form-control"
+                  value={form?.email}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -74,6 +102,7 @@ export default function AccountInfo() {
                   name="soDt"
                   type="text"
                   className="form-control"
+                  value={form?.soDt}
                 />
                 <span className="text-danger"></span>
               </div>
