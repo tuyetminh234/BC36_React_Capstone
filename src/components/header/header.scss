@@ -1,0 +1,28 @@
+
+ul {
+    list-style: none;
+}
+a {
+    font-size: 20px;
+    color: #189a46;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.navbar-brand a {
+    display: flex;
+    font-size: 20px;
+    color:#189a46;
+    font-weight: 700;
+    text-decoration: none;
+}
+.navbar-brand a:hover {
+    color:#10612d;
+    text-decoration: none;
+    
+}
+
+.navbar-brand {
+    padding-left: 50px;
+   
+}

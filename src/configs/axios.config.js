@@ -19,4 +19,15 @@ axiosRequest.interceptors.request.use((config) => {
   return config;
 });
 
+axiosRequest.interceptors.request.use((config) => {
+  if (localStorage.getItem("REGISTER_INFO_KEY")) {
+    const registerInfo = JSON.parse(localStorage.getItem("REGISTER_INFO_KEY"));
+    const accessToken = registerInfo.accessToken;
+
+    config.headers.Authorization = `Bearer ${accessToken}`;
+  }
+
+  return config;
+});
+
 export { axiosRequest };

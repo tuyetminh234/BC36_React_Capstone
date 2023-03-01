@@ -12,6 +12,8 @@ import Login from "pages/login/Login";
 import MovieDetail from "pages/movie-detail/MovieDetail";
 import MovieManagement from "pages/movie-management/MovieManagement";
 import MovieForm from "pages/movie-form/MovieForm";
+import Register from "pages/register/Register";
+import Account from "pages/account/Account";
 
 export default function Router() {
   const routing = useRoutes([
@@ -47,6 +49,14 @@ export default function Router() {
             },
           ],
         },
+        {
+          path: "/register",
+          element: <Register/>
+        },
+        {
+          path: "/account/:user",
+          element: <Account/>,
+        }
       ],
     },
     {

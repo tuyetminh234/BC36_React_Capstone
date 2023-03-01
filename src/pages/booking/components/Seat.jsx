@@ -6,18 +6,18 @@ export default function Seat(props) {
 
   const populateClassName = () => {
     if (props.ele.daDat) {
-      return "btn-secondary";
+      return "selected";
     }
 
     if (isSelected) {
-      return "btn-primary";
+      return "booked";
     }
 
     if (props.ele.loaiGhe === "Vip") {
-      return "btn-warning";
+      return "vip";
     }
 
-    return "btn-dark";
+    return "available";
   };
 
   const handleSelectSeat = () => {
@@ -31,7 +31,7 @@ export default function Seat(props) {
       onClick={handleSelectSeat}
       disabled={props.ele.daDat}
       style={{ width: 50, height: 50, padding: 0 }}
-      className={`mr-1 mb-1 btn ${populateClassName()}`}
+      className={`mr-1 mb-1  ${populateClassName()}`}
     >
       {props.ele.tenGhe}
     </button>

@@ -9,3 +9,13 @@ export const loginApi = (information) => {
     data: information,
   });
 };
+
+
+export const bookingHistoryApi = (user) => {
+  return axiosRequest({
+    url: `/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${user}`,
+    method: "POST",
+   
+  });
+};
+
