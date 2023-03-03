@@ -1,49 +1,68 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { profileApi } from 'services/user'
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { upDateProfileApi } from "services/user";
 
 export default function AccountInfo(props) {
-  const [form, setForm] = useState()
- 
- 
+  const [form, setForm] = useState();
+  // const [updateProfile, setUpdateProfile] = useState()
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+
   useEffect(() => {
     if (props.data) {
-      setForm(props.data)
+      setForm(props.data);
     }
-  }, [props.data])
+  }, [props.data]);
 
-  // const getProfileApi = async () => {
-  //   try {
-  //     const result = await getProfileApi()
-  //   console.log(result)
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     
-  //   } catch (error) {
-  //     console.log("error", error)
-  //   }
-    
-// }
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
 
+  //   useEffect(() => {
+  //     getUpdateProfileApi()
+  // },[])
+
+  const getUpdateProfileApi = async (event) => {
+    event.preventDefault();
+    try {
+    const result = await upDateProfileApi(form);
+      console.log(result);
+      navigate("/")
+      alert("Cập nhật thành công")
+      
+    } catch (error) {
+      console.log(error);
+    }
+    
+  };
   return (
     <div className="account-info">
-    <h1>Cài đặt tài khoản chung</h1>
+      <h1>Cài đặt tài khoản chung</h1>
       <p>Thông tin có thể được thay đổi</p>
       <hr />
       <form className="form-account">
-    
         <div className="form-content">
           <div className="row">
             <div className="col-6">
               <div className="form-group">
                 <label>Tài khoản</label>
                 <input
+                  disabled
                   required
                   title="Tài khoản"
                   name="taiKhoan"
                   type="text"
                   className="form-control"
-                  value={form?.taiKhoan}
+                  onChange={handleChange}
+                  defaultValue={form?.taiKhoan}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -59,7 +78,8 @@ export default function AccountInfo(props) {
                   maxLength={10}
                   type="text"
                   className="form-control"
-                  value={form?.matKhau}
+                  defaultValue={form?.matKhau}
+                  onChange={handleChange}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -73,7 +93,8 @@ export default function AccountInfo(props) {
                   name="hoTen"
                   type="text"
                   className="form-control"
-                  value={form?.hoTen}
+                  defaultValue={form?.hoTen}
+                  onChange={handleChange}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -88,7 +109,8 @@ export default function AccountInfo(props) {
                   type="text"
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   className="form-control"
-                  value={form?.email}
+                  defaultValue={form?.email}
+                  onChange={handleChange}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -102,7 +124,8 @@ export default function AccountInfo(props) {
                   name="soDt"
                   type="text"
                   className="form-control"
-                  value={form?.soDt}
+                  defaultValue={form?.soDt}
+                  onChange={handleChange}
                 />
                 <span className="text-danger"></span>
               </div>
@@ -110,6 +133,8 @@ export default function AccountInfo(props) {
           </div>
           <hr />
           <button
+            onClick={getUpdateProfileApi}
+            type="submit"
             // disabled={!formRef.current?.checkValidity()}
             className="update btn btn-warning mr-2"
           >
@@ -118,5 +143,5 @@ export default function AccountInfo(props) {
         </div>
       </form>
     </div>
-  )
+  );
 }

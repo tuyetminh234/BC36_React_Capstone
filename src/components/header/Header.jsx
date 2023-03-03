@@ -16,69 +16,78 @@ export default function Header() {
   };
 
   return (
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <div className="header">
+<nav className="navbar navbar-expand-lg navbar-light ">
     
-      <button
-        className="navbar-toggler d-lg-none"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="collapsibleNavId">
-        
-            {/* <a className="nav-link" href="#">
-              {" "}
-              Home{" "}
-            </a> */}
-            <a className="navbar-brand"><NavLink to="/">Home</NavLink></a>
-            
-        
-
-        <a className="navbar-brand" href="#">
-        {" "}
-        Movie{" "}
-      </a>
-      <a className="navbar-brand" href="#">
-      {" "}
-        Member{" "}
-        </a>
-        <a className="navbar-brand" href="#">
-      {" "}
-        Contact{" "}
-      </a>
+    <button
+      className="navbar-toggler d-lg-none"
+      type="button"
+      data-toggle="collapse"
+      data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span className="navbar-toggler-icon"></span>
+    </button>
+        <div className="collapse navbar-collapse" id="collapsibleNavId">
+          <ul className="header-ul ml-auto">
+{/* <a className="nav-link" href="#">
+            {" "}
+            Home{" "}
+          </a> */}
+        <li><a className="navbar-brand"><NavLink to="/">Home</NavLink></a></li>  
+          
       
-        <div className="ml-auto">
-          {userState.userInfo ? (
-            <>
-              <span className="mr-3">Hello {userState.userInfo.hoTen}</span>
-              <button className="btn btn-danger" onClick={handleLogout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-                <button
-                  onClick={()=>navigate("/register")}
-                className="btn btn-outline-info my-2 my-sm-0 mr-2"
-                type="sumit"
-              >
-                Register
-              </button>
+
+        <li><a className="navbar-brand" href="#"> 
+      {" "}
+      Movie{" "}
+    </a></li>
+   <li><a className="navbar-brand" href="#">
+    {" "}
+      Member{" "}
+      </a></li> 
+    <li><a className="navbar-brand" href="#">
+    {" "}
+      Contact{" "}
+    </a></li>  
+    
+          </ul>
+      
+          
+   
+    </div>
+   
+      </nav>
+      <div className="header-right ml-auto ">
+        {userState.userInfo ? (
+          <>
+            <a className="account-name" href="/account/:user"
+            ><span className="mr-3">Hello {userState.userInfo.hoTen}</span></a>
+            <button className="btn btn-danger" onClick={handleLogout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
               <button
-                onClick={() => navigate("/login")}
-                className="btn btn-outline-success my-2 my-sm-0"
-              >
-                Login
-              </button>
-            </>
-          )}
-        </div>
+                onClick={()=>navigate("/register")}
+              className="btn btn-outline-info my-2 my-sm-0 mr-2"
+              type="sumit"
+            >
+              Register
+            </button>
+            <button
+              onClick={() => navigate("/login")}
+              className="btn btn-outline-success my-2 my-sm-0"
+            >
+              Login
+            </button>
+          </>
+        )}
       </div>
-    </nav>
+    </div>
+    
   );
 }

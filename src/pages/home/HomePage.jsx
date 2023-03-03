@@ -8,7 +8,7 @@ import "./homePage.scss"
 
 export default function HomePage() {
   return (
-    <div className="py-5">
+    <div>
       <CarouselMovies />
       <MovieList />
 

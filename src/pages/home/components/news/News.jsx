@@ -63,7 +63,7 @@ export default function News() {
               <img src="https://www.galaxycine.vn/media/2023/2/14/fast-x--vin-diesel-ru-dan-sieu-anh-hung-dua-xe-6_1676348176123.jpg" data-src="https://www.galaxycine.vn/media/2023/2/14/fast-x--vin-diesel-ru-dan-sieu-anh-hung-dua-xe-6_1676348176123.jpg" />
             </div>
             <div className="content-right ">
-              <h4><a href="#">Fast X:  Vin Diesel Rủ Dàn Siêu Anh Hùng Đua Xe?</a></h4>
+              <h4><a  href="#">Fast X:  Vin Diesel Rủ Dàn Siêu Anh Hùng Đua Xe?</a></h4>
               <p>Fast X – phần mở đầu cho “cuộc đua cuối” của đại gia đình Toretto vừa tung ra trailer siêu hấp dẫn vào 10.02 vừa qua....</p>
             </div>
           </div>

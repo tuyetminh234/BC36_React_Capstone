@@ -6,12 +6,13 @@ import { useEffect, useState } from "react";
 import { getProfileApi } from "../../services/user";
 import { useParams } from "react-router-dom";
 
+
 export default function Account() {
   const { user } = useParams();
   const [data, setData] = useState();
 
   useEffect(() => {
-    console.log("call 1 lan");
+   
     getProfile();
   }, []);
 

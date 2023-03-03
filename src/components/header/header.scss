@@ -1,4 +1,14 @@
 
+.header {
+    display: flex;
+    
+}
+.header-ul {
+    display: flex;
+}
+.header-right {
+    padding: 30px
+}
 ul {
     list-style: none;
 }
@@ -7,6 +17,16 @@ a {
     color: #189a46;
     font-weight: 400;
     text-decoration: none;
+}
+.account-name:hover {
+    text-decoration: none;
+  
+}
+.account-name span{
+    color: #189a46;
+}
+.account-name span:hover {
+color:#10612d;
 }
 
 .navbar-brand a {
@@ -25,4 +45,12 @@ a {
 .navbar-brand {
     padding-left: 50px;
    
+}
+
+@media (max-width: 991px){
+    .header-ul {
+        display: inline-block;
+       
+    }
+  
 }

@@ -10,12 +10,10 @@ export const loginApi = (information) => {
   });
 };
 
-
 export const bookingHistoryApi = (user) => {
   return axiosRequest({
     url: `/QuanLyNguoiDung/ThongTinTaiKhoan?taiKhoan=${user}`,
     method: "POST",
-   
   });
 };
 
@@ -26,4 +24,10 @@ export const getProfileApi = (taiKhoan) => {
   });
 };
 
-
+export const upDateProfileApi = (form) => {
+  return axiosRequest({
+    url: `/QuanLyNguoiDung/CapNhatThongTinNguoiDung`,
+    method: "PUT",
+    data: form,
+  });
+};
