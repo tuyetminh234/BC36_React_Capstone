@@ -30,7 +30,7 @@ export default function Seat(props) {
     <button
       onClick={handleSelectSeat}
       disabled={props.ele.daDat}
-      style={{ width: 50, height: 50, padding: 0 }}
+      style={{ width: 37, height: 37, padding: 0 }}
       className={`mr-1 mb-1  ${populateClassName()}`}
     >
       {props.ele.tenGhe}

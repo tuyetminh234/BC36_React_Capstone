@@ -12,6 +12,8 @@ export default function History() {
     getBookingtHistory();
   }, []);
 
+  console.log(history)
+
   const getBookingtHistory = async () => {
     const result = await bookingHistoryApi(params.user);
     // console.log(result.data.content);
@@ -39,12 +41,13 @@ export default function History() {
           </p>
           <p>
             Rạp: {" "}
-            {ele?.danhSachGhe?.map((ele) => {
+            {ele?.danhSachGhe?.map((ele, index) => {
+              if (index !== 0) return "";
               return (<span key={ele.maGhe}>{ele.tenCumRap}</span>);
             })}{" "}
             Ghế số: {" "}
             {ele?.danhSachGhe?.map((ele) => {
-              return (<span key={ele.maGhe}>{ele.tenGhe}</span>);
+              return (<span key={ele.maGhe}>{ele.tenGhe}  </span>);
             })}{" "}
           </p>
         </div>

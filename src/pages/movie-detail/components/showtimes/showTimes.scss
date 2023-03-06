@@ -72,3 +72,9 @@ h5 {
 .show-times:hover {
     background-color: rgba(160, 141, 141, 0.313);
 }
+
+@media(max-width: 992px){
+    .time-respon {
+    margin-top: 30px;
+    }
+}

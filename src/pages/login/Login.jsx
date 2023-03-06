@@ -37,7 +37,7 @@ export default function Login() {
     <div className="w-25 mx-auto py-5">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="">Username</label>
+          <label htmlFor="">Tài khoản</label>
           <input
             type="text"
             className="form-control"
@@ -46,7 +46,7 @@ export default function Login() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="">Password</label>
+          <label htmlFor="">Mật khẩu</label>
           <input
             type="text"
             className="form-control"
@@ -54,7 +54,7 @@ export default function Login() {
             onChange={handleChange}
           />
         </div>
-        <button className="btn btn-primary">LOGIN</button>
+        <button className="btn btn-primary">Đăng nhập</button>
       </form>
     </div>
   );

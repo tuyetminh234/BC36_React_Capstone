@@ -13,7 +13,7 @@ export default function HomePage() {
       <MovieList />
 
 
-      <div className="theater mt-5" >
+      <div id="theater" className="theater mt-5" >
         <div className="content" >
           <TheaterSystem />
           
@@ -23,8 +23,6 @@ export default function HomePage() {
         </div>
       </div>
 
-     
-  
       <News />
     </div>
   );

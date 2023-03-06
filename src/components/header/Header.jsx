@@ -36,21 +36,21 @@ export default function Header() {
             {" "}
             Home{" "}
           </a> */}
-        <li><a className="navbar-brand"><NavLink to="/">Home</NavLink></a></li>  
+        <li><a className="navbar-brand"><NavLink to="/">Trang chủ</NavLink></a></li>  
           
       
 
-        <li><a className="navbar-brand" href="#"> 
+        <li><a className="navbar-brand" href="#movieList"> 
       {" "}
-      Movie{" "}
+      Xem phim{" "}
     </a></li>
-   <li><a className="navbar-brand" href="#">
+   <li><a className="navbar-brand" href="#theater">
     {" "}
-      Member{" "}
+      Cụm rạp{" "}
       </a></li> 
-    <li><a className="navbar-brand" href="#">
+    <li><a className="navbar-brand" href="#news">
     {" "}
-      Contact{" "}
+      Tin tức{" "}
     </a></li>  
     
           </ul>
@@ -66,23 +66,23 @@ export default function Header() {
             <a className="account-name" href="/account/:user"
             ><span className="mr-3">Hello {userState.userInfo.hoTen}</span></a>
             <button className="btn btn-danger" onClick={handleLogout}>
-              Logout
+              Đăng xuất
             </button>
           </>
         ) : (
           <>
               <button
                 onClick={()=>navigate("/register")}
-              className="btn btn-outline-info my-2 my-sm-0 mr-2"
+              className="btn btn-outline-success my-2 my-sm-0 mr-2"
               type="sumit"
             >
-              Register
+              Đăng ký
             </button>
             <button
               onClick={() => navigate("/login")}
-              className="btn btn-outline-success my-2 my-sm-0"
+              className="btn btn-outline-primary my-2 my-sm-0"
             >
-              Login
+              Đăng nhập
             </button>
           </>
         )}
