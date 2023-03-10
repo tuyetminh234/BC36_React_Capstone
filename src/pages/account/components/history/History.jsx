@@ -35,7 +35,8 @@ export default function History() {
           </p>
           <p>
             Hệ thống Rạp: {" "}
-            {ele?.danhSachGhe?.map((ele) => {
+            {ele?.danhSachGhe?.map((ele, index) => {
+              if (index !== 0) return ""
               return (<span key={ele.maGhe}>{ele.tenHeThongRap}</span>);
             })}
           </p>
