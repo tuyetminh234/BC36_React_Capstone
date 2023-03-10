@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URL, GROUP_ID, TOKEN_CYBERSOFT } from "../constants";
+import { GROUP_ID } from "../constants";
 import { axiosRequest } from "../configs/axios.config";
 
 export const fetchMovieListApi = () => {

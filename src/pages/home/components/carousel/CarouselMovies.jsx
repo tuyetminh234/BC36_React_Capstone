@@ -27,7 +27,7 @@ export default function CarouselMovies() {
       return (
         <div key={ele.maBanner} className="banner">
           <div>
-            <img style={contentStyle} src={ele.hinhAnh} className="banner-img"/>
+            <img style={contentStyle} src={ele.hinhAnh} className="banner-img w-100 h-100"/>
           </div>
         </div>
       );

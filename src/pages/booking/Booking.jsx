@@ -78,7 +78,7 @@ export default function Booking() {
           <div style={{ width: "95%" }} className="mx-auto">
             {renderSeats()}
           </div>
-          <div className="mt-5">
+          <div className=" mt-5">
           <button className=" vip"></button>{" "}
             <span className="text-dark">Ghế VIP</span>
             <br />

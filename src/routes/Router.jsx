@@ -51,12 +51,12 @@ export default function Router() {
         },
         {
           path: "/register",
-          element: <Register/>
+          element: <Register />,
         },
         {
           path: "/account/:user",
-          element: <Account/>,
-        }
+          element: <Account />,
+        },
       ],
     },
     {

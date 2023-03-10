@@ -168,13 +168,13 @@ export default function Register() {
             // disabled={!formRef.current?.checkValidity()}
             className="btn btn-warning mr-2"
           >
-            REGISTER
+            Đăng ký
           </button>
           <button
             onClick={() => navigate("/login")}
-            className="btn btn-outline-dark"
+            className="btn btn-outline-primary"
           >
-            LOGIN
+            Đăng nhập
           </button>
         </form>
       </div>

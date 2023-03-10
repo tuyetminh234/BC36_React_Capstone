@@ -54,7 +54,7 @@ export default function Showtimes() {
         >
           {ele?.cumRapChieu?.map((ele) => {
             return (
-              <div key={ele.maCumRap} className="row mb-5">
+              <div key={ele.maCumRap} className=" time-respon row mb-5">
                 <div className="col-2">
                   <img className="img-fluid rounded" src={ele.hinhAnh} />
                 </div>
@@ -87,7 +87,7 @@ export default function Showtimes() {
     <div className=" col-12 mt-5">
       <h3>Lịch chiếu</h3>
       <div className="show-system row">
-        <div className="col-4">
+        <div className="col-lg-4">
           <div
             className=" system-content nav flex-column nav-pills"
             id="v-pills-tab"
@@ -97,7 +97,7 @@ export default function Showtimes() {
             {renderTabs()}
           </div>
         </div>
-        <div className="col-8">
+        <div className="col-lg-8">
           <div className="tab-content" id="v-pills-tabContent">
             
             {renderTabContents()}
