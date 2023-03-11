@@ -12,9 +12,7 @@ export const useMovieList = () => {
 
   const getMovieList = async () => {
     setLoadingState({ isLoading: true });
-
     const result = await fetchMovieListApi();
-
     setMovieList(result.data.content);
     setLoadingState({ isLoading: false });
   };

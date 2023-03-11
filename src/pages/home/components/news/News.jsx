@@ -44,8 +44,6 @@ export default function News() {
               <p>Nhà Bà Nữ không phải phim chiếu rạp xuất sắc nhưng chắc chắn là tác phẩm cực kì thích hợp để rủ gia đình và bạn bè ra rạp chiếu phim...</p>
             </div>
           </div>
-     
-         
         </div>
         <div className="col-md-6 col-xs-12">
         <h3>Blog điện ảnh</h3>
@@ -86,14 +84,10 @@ export default function News() {
             </div>
           </div>
         </div>
-       
-
       </div>
 </section>
-
   </div>;
 }
 
 
 
-<img src="https://www.galaxycine.vn/media/2023/2/14/fast-x--vin-diesel-ru-dan-sieu-anh-hung-dua-xe-6_1676348176123.jpg" data-src="https://www.galaxycine.vn/media/2023/2/14/fast-x--vin-diesel-ru-dan-sieu-anh-hung-dua-xe-6_1676348176123.jpg" class="lazy loaded" data-was-processed="true"></img>

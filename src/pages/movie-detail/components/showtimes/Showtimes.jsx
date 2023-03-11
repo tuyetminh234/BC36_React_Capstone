@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { fetchMovieShowtimesApi } from "../../../../services/cinema";
 import moment from "moment";
 import { formatDate } from "../../../../utils";
-import "./showTimes.scss"
+import "./showTimes.scss";
 export default function Showtimes() {
   const [movieShowtimes, setMovieShowtimes] = useState({});
   const params = useParams();
@@ -16,9 +16,7 @@ export default function Showtimes() {
 
   const getMovieShowtimes = async () => {
     const result = await fetchMovieShowtimesApi(params.id);
-
     console.log(result);
-
     setMovieShowtimes(result.data.content);
   };
 
@@ -37,7 +35,6 @@ export default function Showtimes() {
             <img className="logo" src={ele.logo} />
             {ele.tenHeThongRap}
           </div>
-         
         </a>
       );
     });
@@ -99,7 +96,6 @@ export default function Showtimes() {
         </div>
         <div className="col-lg-8">
           <div className="tab-content" id="v-pills-tabContent">
-            
             {renderTabContents()}
           </div>
         </div>

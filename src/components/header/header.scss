@@ -18,8 +18,6 @@ a {
     font-weight: 400;
     text-decoration: none;
 }
-
-
 .header-ul .navbar-brand:hover {
     color: #189a46;
 }
@@ -33,7 +31,6 @@ a {
 .account-name span:hover {
 color:#10612d;
 }
-
 .navbar-brand a {
     display: flex;
     font-size: 20px;
@@ -44,18 +41,13 @@ color:#10612d;
 .navbar-brand a:hover {
     color:#10612d;
     text-decoration: none;
-    
 }
-
 .navbar-brand {
     padding-left: 50px;
    
 }
-
 @media (max-width: 991px){
     .header-ul {
-        display: inline-block;
-       
+        display: inline-block; 
     }
-  
 }

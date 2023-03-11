@@ -12,7 +12,6 @@ axiosRequest.interceptors.request.use((config) => {
   if (localStorage.getItem("USER_INFO_KEY")) {
     const userInfo = JSON.parse(localStorage.getItem("USER_INFO_KEY"));
     const accessToken = userInfo.accessToken;
-
     config.headers.Authorization = `Bearer ${accessToken}`;
   }
 
@@ -23,7 +22,6 @@ axiosRequest.interceptors.request.use((config) => {
   if (localStorage.getItem("REGISTER_INFO_KEY")) {
     const registerInfo = JSON.parse(localStorage.getItem("REGISTER_INFO_KEY"));
     const accessToken = registerInfo.accessToken;
-
     config.headers.Authorization = `Bearer ${accessToken}`;
   }
 
