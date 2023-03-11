@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMovieDetailApi } from "../../../../services/movie";
-import moment from "moment";
 import { formatDate } from "../../../../utils";
 import "./detail.scss";
 

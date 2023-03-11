@@ -19,7 +19,6 @@ export default function Account() {
   const getProfile = async () => {
     try {
       const result = await getProfileApi(user);
-      // console.log("result", result.data.content);
       const data = {
         ...{},
         taiKhoan: result.data.content.taiKhoan,

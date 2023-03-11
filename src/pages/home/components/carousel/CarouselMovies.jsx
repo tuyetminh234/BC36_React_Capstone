@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Carousel } from "antd";
 import { fetchCarouselApi } from "services/carousel";
-import "./carouselMovie.scss"
-
+import "./carouselMovie.scss";
 
 const contentStyle = {
   width: "100%",
@@ -18,7 +17,6 @@ export default function CarouselMovies() {
 
   const getCarousel = async () => {
     const result = await fetchCarouselApi();
-    // console.log(result)
     setCarouselList(result.data.content);
   };
 
@@ -27,22 +25,21 @@ export default function CarouselMovies() {
       return (
         <div key={ele.maBanner} className="banner">
           <div>
-            <img style={contentStyle} src={ele.hinhAnh} className="banner-img w-100 h-100"/>
+            <img
+              style={contentStyle}
+              src={ele.hinhAnh}
+              className="banner-img w-100 h-100"
+            />
           </div>
         </div>
       );
     });
   };
 
-  const onChange = (currentSlide) => {
-    // console.log(currentSlide);
-  };
+  const onChange = (currentSlide) => {};
   return (
     <Carousel afterChange={onChange} dotPosition="right" autoplay={true}>
       {renderCarousel()}
     </Carousel>
   );
 }
-
-
-

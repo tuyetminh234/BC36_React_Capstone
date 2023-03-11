@@ -53,11 +53,6 @@ export default function Register() {
       event.target;
     const { valueMissing, tooShort, tooLong, patternMismatch } = validity;
 
-    // console.log(event);
-    // console.log(validationMessage);
-
-    // console.log(patternMismatch);
-
     if (valueMissing) {
       message = `Yêu cầu nhập ${title}.`;
     }
@@ -164,12 +159,7 @@ export default function Register() {
             </div>
           </div>
           <hr />
-          <button
-            // disabled={!formRef.current?.checkValidity()}
-            className="btn btn-warning mr-2"
-          >
-            Đăng ký
-          </button>
+          <button className="btn btn-warning mr-2">Đăng ký</button>
           <button
             onClick={() => navigate("/login")}
             className="btn btn-outline-primary"
