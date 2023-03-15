@@ -79,10 +79,15 @@ export default function MovieList() {
   };
 
   return (
-    <div id="movieList" className="movie-list row mt-3 mx-auto w-75">
+    <div id="movieList" className="movie-list">
+      <h3>Phim đang chiếu</h3>
+<div className=" row mt-3 mx-auto w-75">
+      
       <Slider {...settings}>
       {renderMovieList()}
       </Slider>
     </div>
+    </div>
+    
   );
 }

@@ -24,7 +24,7 @@ export default function Footer() {
                 <li>
                   <p>
                     <strong>Email</strong>:
-                    <a href="mailto: example@mail.com "> hoidap@cgv.vn</a>
+                    <a href="mailto: example@mail.com "> hoidap@ggc.vn</a>
                   </p>
                 </li>
               </ul>
@@ -56,7 +56,7 @@ export default function Footer() {
             <div className="col-lg-6 col-md-7">
               <div className="row">
                 <div className="col-sm-4 col-6 footer-list mt-5">
-                  <h6 className="footer-title">CGV Việt Nam</h6>
+                  <h6 className="footer-title">GGC Việt Nam</h6>
                   <ul>
                     <li>
                       <a href="about.html">Giới thiệu</a>
@@ -113,8 +113,8 @@ export default function Footer() {
         <div className="midd-footer align-center py-lg-4 py-3 mt-5">
           <div className="container">
             <p className="copy-footer text-center">
-              COPYRIGHT 2017 CJ CGV. All RIGHTS RESERVED.
-              <a href="https://www.cgv.vn/home/">CGV</a>
+              COPYRIGHT 2017 CJ ggc. All RIGHTS RESERVED.
+              <a href="https://www.cgv.vn/home/">GGC</a>
             </p>
           </div>
         </div>

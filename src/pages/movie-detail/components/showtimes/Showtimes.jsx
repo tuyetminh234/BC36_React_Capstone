@@ -31,9 +31,9 @@ export default function Showtimes() {
           role="tab"
           aria-selected="true"
         >
-          <div>
+          <div className="logo-left">
             <img className="logo" src={ele.logo} />
-            {ele.tenHeThongRap}
+            {/* <p>{ele.tenHeThongRap}</p> */}
           </div>
         </a>
       );

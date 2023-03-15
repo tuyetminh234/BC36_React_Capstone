@@ -133,10 +133,14 @@ export default function TheaterSystem() {
   };
 
   return (
-    <>
-      <div className="theater-system ">{renderThearterSystem()}</div>
+    <div id="theater" className="theater mt-5">
+       <h3>Hệ thống rạp</h3>
+    <div className="content">
+    <div className="theater-system ">{renderThearterSystem()}</div>
       <div className="theater-address">{renderTheaterAddress()}</div>
       <div className="theater-showtimes">{renderShowtimes()}</div>
-    </>
+    </div>
+  </div>
+   
   );
 }
