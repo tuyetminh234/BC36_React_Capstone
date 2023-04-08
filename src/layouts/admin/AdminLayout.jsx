@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom";
+import React from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import {
+  FileAddOutlined,
+  FileDoneOutlined,
   FileOutlined,
-  PieChartOutlined,
+  UserAddOutlined,
   UserOutlined,
-  DesktopOutlined,
-  TeamOutlined,
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Avatar, Breadcrumb, Layout, Menu, theme } from "antd";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserInfoAction } from "store/actions/userAction";
+import SidebarAdmin from "components/sidebar-admin/SidebarAdmin";
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
   return {
@@ -17,22 +21,18 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
-const items = [
-  getItem("Option 1", "1", <PieChartOutlined />),
-  getItem("Option 2", "2", <DesktopOutlined />),
-  getItem("User", "sub1", <UserOutlined />, [
-    getItem("Tom", "3"),
-    getItem("Bill", "4"),
-    getItem("Alex", "5"),
-  ]),
-  getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
-    getItem("Team 2", "8"),
-  ]),
-  getItem("Files", "9", <FileOutlined />),
-];
 
-export const AdminLayout = () => {
+export default function AdminLayout() {
+  const userState = useSelector((state) => state.userReducer);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    localStorage.removeItem("USER_INFO_KEY");
+    dispatch(setUserInfoAction(null));
+    navigate("/");
+  };
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
@@ -41,34 +41,51 @@ export const AdminLayout = () => {
     <Layout
       style={{
         minHeight: "100vh",
+        display: "flex",
+        flexDirection: "initial",
       }}
     >
-      <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
-      >
-        <div
-          style={{
-            height: 32,
-            margin: 16,
-            background: "rgba(255, 255, 255, 0.2)",
-          }}
-        />
-        <Menu
-          theme="dark"
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={items}
-        />
-      </Sider>
+      <SidebarAdmin/>
       <Layout className="site-layout">
         <Header
           style={{
             padding: 0,
             background: colorBgContainer,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            padding: "0px 15px",
           }}
-        />
+        >
+          <Avatar
+            style={{
+              backgroundColor: "rgb(228 204 187)",
+              color: "rgb(206 141 131)",
+            }}
+            size="default"
+            icon={<UserOutlined />}
+          ></Avatar>
+          {userState.userInfo && (
+            <>
+              <span
+                className="mr-3 ml-2 px-2"
+                style={{
+                  border: "1px dashed #000",
+                  borderRadius: "5px",
+                  lineHeight: "32px",
+                }}
+              >
+                {userState.userInfo.hoTen}
+              </span>
+              <button
+                onClick={handleLogout}
+                className="btn btn-danger font-weight-bold rounded-pill border-0"
+              >
+                LOGOUT
+              </button>
+            </>
+          )}
+        </Header>
         <Content
           style={{
             margin: "0 16px",
@@ -79,8 +96,8 @@ export const AdminLayout = () => {
               margin: "16px 0",
             }}
           >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            {/* <Breadcrumb.Item>User</Breadcrumb.Item>
+            <Breadcrumb.Item>Bill</Breadcrumb.Item> */}
           </Breadcrumb>
           <div
             style={{
@@ -102,4 +119,4 @@ export const AdminLayout = () => {
       </Layout>
     </Layout>
   );
-};
+}
